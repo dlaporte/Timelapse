@@ -5,7 +5,7 @@ import time
 import os
 
 snapshot_interval = 30
-snapshot_script = "/root/bin/snapshot.py"
+snapshot_script = "/root/Timelapse/snapshot.py"
 
 # cabin location and elevation
 somewhere = ephem.Observer()
@@ -29,5 +29,5 @@ interval = (sunset-sunrise) / 30
 # schedule at jobs for each snapshot
 time = sunrise - interval
 while time <= (sunset + interval):
-	os.system("echo " + snapshot_script + " | at " + time.strftime("%H:%M"))
+	os.system("echo " + snapshot_script + " | at -t " + time.strftime("%y%m%d%H%M"))
 	time += interval

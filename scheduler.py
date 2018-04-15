@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 import os
 
-snapshot_interval = 30
+snapshot_interval = 42
 snapshot_script = "/root/Timelapse/snapshot.py"
 
 # cabin location and elevation

@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 import os
 
-snapshot_interval = 42
+snapshot_interval = 44
 snapshot_script = "/root/Timelapse/snapshot.py"
 
 # cabin location and elevation
@@ -14,7 +14,7 @@ somewhere.lon = '-71.116130'
 somewhere.elevation = 56
 
 # clear out all previous at jobs
-os.system('atrm $(atq | cut -f1)')
+os.system('atrm $(atq | cut -f1) > /dev/null 2>&1')
 
 # determine interval for snapshot_interval photos per day
 sun     = ephem.Sun()

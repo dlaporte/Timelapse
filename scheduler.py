@@ -18,7 +18,7 @@ cabin.lon = '-71.116130'
 cabin.elevation = 56
 
 # set time to midnight today
-cabin.date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+cabin.date = datetime.now().replace(hour=0, minute=1, second=0, microsecond=0)
 
 # determine interval for snapshot_interval photos per day
 sun     = ephem.Sun()
@@ -59,3 +59,5 @@ for shot in range(twilight_shots):
         if (time > datetime.now()):
 		os.system("echo " + snapshot_script + " | at -t " + time.strftime("%y%m%d%H%M"))
 	time += twilight_interval
+
+
